@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Dropzone from "../components/Dropzone";
 
-const UserProfiles = () => {
+const UserProfiles = (props) => {
   const [userProfiles, setUserProfiles] = useState([]);
 
+  //get
   const fetchUserProfiles = () => {
     axios.get("http://localhost:8080/user-profile").then((res) => {
       console.log(res);
@@ -24,7 +25,8 @@ const UserProfiles = () => {
         <br />
         <h1>{userProfiles.username}</h1>
         <p>{userProfiles.userProfileId}</p>
-        <Dropzone />
+        <Dropzone {...userProfiles} />
+        {/* like userProfileId = {userProfiles.userProfileId} */}
         <br />
       </div>
     );
