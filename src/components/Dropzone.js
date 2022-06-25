@@ -11,7 +11,7 @@ const Dropzone = (userProfileId) => {
 
     axios
       .post(`http://localhost:8080/${userProfileId}/image/upload`, formData, {
-        Headers: {
+        headers: {
           "Content-Type": "multipart/form-data",
         },
       })

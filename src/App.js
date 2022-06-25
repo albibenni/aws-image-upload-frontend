@@ -5,7 +5,7 @@ import UserProfiles from "./axios/UserProfiles";
 function App() {
   return (
     <div className="App">
-      <UserProfiles />;
+      <UserProfiles />
     </div>
   );
 }
